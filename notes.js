@@ -32,18 +32,95 @@ function test() {
 }
 test(); // call the function, you can call function before you every declare it.
 
-function argument(student) { // accepts and argument
-  console.log("this is my student ${student}"); 
+function argument(student) {
+  // accepts and argument
+  console.log("this is my student ${student}");
 }
-argument("claire");// not text specific, both works
+argument("claire"); // not text specific, both works
 argument(8);
 
-function add (x,y){
-    return x + y; // to get the value back with return, if u don't have return it is undefined. sends product for output.
+function add(x, y) {
+  return x + y; // to get the value back with return, if u don't have return it is undefined. sends product for output.
 }
-console,log(add(7,9));
-const answer = add(7,0);
-console.log(answer)
+console, log(add(7, 9));
+const answer = add(7, 0);
+console.log(answer);
 //--------------//
 //TRUTH TABLES : ^ = and  v = or
 // null and operations//
+
+//DOM notes??//
+const header = document.querySelecter("h1");
+console.log(header.parentElement); //parent select other parts
+
+const DOMSelectors = {
+  //storage
+  header: document.querySelector("h1"), //stored object in another like classes in python, "i wnna know where this is so i can do smth to it later"
+  description: document.querySelector(".card-desc"),
+  items: document.querySelectorAll("li"), // all shows all in the list without it it just shows one of the items on the list
+}; //instead of dictionaries we have objects
+console.log(DOMSelectors.description);
+const student = {
+  name: "mark",
+};
+
+//button
+function changeColor() {
+  let button = document.querySelector(".enter");
+  //console.log(button); //always log things early to know what to expect
+  //listen for a click event
+  button.addEventListener("click", function (event) {
+    event.preventDefault(); //prevents default behavior of thing.
+    //logging the click event
+    console.log(event);
+    button.style.backgroundColor = "red"; //not used alot if u do u will get ripped apart
+  });
+}
+//call function
+changeColor();
+
+//get info from form
+
+function formAnswer() {
+  let form = document.querySelector(".submit");
+  console.log(form);
+  form.preventDefault();
+  form.addEventListener("Beep", function (event) {});
+  console.log(form);
+}
+formAnswer();
+
+//-----------------//
+//media format for css style file.
+@media screen and (max-width: 1100px) {
+  .container {
+      flex-direction: row;
+  }
+  .card {
+      width: 30%
+  }
+}
+@media screen and (max-width: 800px) {
+  .container {
+      flex-direction: row;
+  }
+  .card {
+      width: 40%
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+      flex-direction: row;
+  }
+  .card{
+      width: 70%
+  }
+}
+@media screen and (max-width: 400px) {
+  .contianer {
+      flex-direction: column;
+  }
+  .card {
+      width: 80%
+  }
+}
