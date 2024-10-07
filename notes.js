@@ -90,6 +90,39 @@ function formAnswer() {
 }
 formAnswer();
 
+//complex java: array and objects lessons//
+const students = ["Matt", "Mark", "Josephine", "Thomas"]; //array
+console.log(students[0]) //remember that lists [0] is the first element, this way is faster for finding a certain value if you know its location in the list.
+students.forEach((student)=> console.log(student));//for each allows us to loop through each element in the list
+//=> arrow functions returns this function
+const movie = {
+  title: "Star Wars",
+  released: 1977,
+  actors:["Mark", "Harrison", "Carrie"],
+}; //dictionaries in javascript
+cards.length // .length finds the amount of objects in the file.
+
+const movies = [
+  { title: "Star Wars",
+    released: 1977,
+    actors:["Mark", "Harrison", "Carrie"],
+  },{  title: "Lion King",
+  released: 1994,
+  actors:["James Earl Jones"],
+  },
+];
+
+movies.forEach((movie) => console.log(movie.title));
+//filter, to get a new array of movies that match criteria
+const newMovies = movies.filter((movie) => movie.release > 1990); //filters to see for each movie which has a release year of greater than 1990 and then we console.log it.
+console.log(newMovies)
+//----------//
+//array name DOT array command then arrow function that accepts singular element of array
+//^^ format of filter
+movies //chaining arrays
+  .filter((movie)=> movie.release > 1990)
+  .forEach((movie => console.log(movie)))
+
 //-----------------//
 //media format for css style file.
 @media screen and (max-width: 1100px) {
