@@ -92,68 +92,56 @@ formAnswer();
 
 //complex java: array and objects lessons//
 const students = ["Matt", "Mark", "Josephine", "Thomas"]; //array
-console.log(students[0]) //remember that lists [0] is the first element, this way is faster for finding a certain value if you know its location in the list.
-students.forEach((student)=> console.log(student));//for each allows us to loop through each element in the list
+console.log(students[0]); //remember that lists [0] is the first element, this way is faster for finding a certain value if you know its location in the list.
+students.forEach((student) => console.log(student)); //for each allows us to loop through each element in the list
 //=> arrow functions returns this function
 const movie = {
   title: "Star Wars",
   released: 1977,
-  actors:["Mark", "Harrison", "Carrie"],
+  actors: ["Mark", "Harrison", "Carrie"],
 }; //dictionaries in javascript
-cards.length // .length finds the amount of objects in the file.
+cards.length; // .length finds the amount of objects in the file.
 
 const movies = [
-  { title: "Star Wars",
+  {
+    title: "Star Wars",
     released: 1977,
-    actors:["Mark", "Harrison", "Carrie"],
-  },{  title: "Lion King",
-  released: 1994,
-  actors:["James Earl Jones"],
+    actors: ["Mark", "Harrison", "Carrie"],
   },
+  { title: "Lion King", released: 1994, actors: ["James Earl Jones"] },
 ];
 
 movies.forEach((movie) => console.log(movie.title));
 //filter, to get a new array of movies that match criteria
 const newMovies = movies.filter((movie) => movie.release > 1990); //filters to see for each movie which has a release year of greater than 1990 and then we console.log it.
-console.log(newMovies)
+console.log(newMovies);
 //----------//
 //array name DOT array command then arrow function that accepts singular element of array
 //^^ format of filter
 movies //chaining arrays
-  .filter((movie)=> movie.release > 1990)
-  .forEach((movie => console.log(movie)))
+  .filter((movie) => movie.release > 1990)
+  .forEach((movie) => console.log(movie));
 
 //-----------------//
-//media format for css style file.
-@media screen and (max-width: 1100px) {
-  .container {
-      flex-direction: row;
-  }
-  .card {
-      width: 30%
-  }
-}
-@media screen and (max-width: 800px) {
-  .container {
-      flex-direction: row;
-  }
-  .card {
-      width: 40%
-  }
-}
-@media screen and (max-width: 600px) {
-  .container {
-      flex-direction: row;
-  }
-  .card{
-      width: 70%
-  }
-}
-@media screen and (max-width: 400px) {
-  .contianer {
-      flex-direction: column;
-  }
-  .card {
-      width: 80%
-  }
-}
+//for html dom file//
+const item = document.querySelectorAll("li"); // selects all list items
+const items = Array.from(item); //turns node lists to arrays ??
+console.log(item);
+items.forEach((el) => (el.style.color = "red")); // iterate/loop over array and for each element and makes it red.
+const buttons = document.querySelectorAll("button");
+buttons.forEach((btn) =>
+  btn.addEventListener("click", function (event) {
+    console.log(event.target.textcontext);
+  })
+); //you can use this to add events to multiple things so for cards you know what you are taking off
+
+DOMSelectors.container.insertAdjacentHTML(
+  "beforeend",
+  '<div class = "card"><h2 class="card-header">${album.name}</h2></div>'
+);
+
+// we need to do: //
+//  event listener for form
+//  get values from form for widget object
+// create the card insert the card
+// find remove buttons and add event listeners
