@@ -1,18 +1,21 @@
 const DOMSelectors = {
   container: document.querySelector(".container"),
   header: document.querySelector("h1"),
-  card: document.querySelector(".card"),
-  cardHeader: document.querySelector(".card-header"),
-  form: document.querySelector(".form"),
-  button: document.querySelector(".submit"),
+  card: document.querySelectorAll(".card"),
+  cardHeader: document.querySelectorAll(".card-header"),
+  form: document.querySelectorAll(".form"),
+  button: document.querySelectorAll(".btn"),
 };
 
 function formAnswer() {
-  let form = document.querySelector(".submit");
+  let form = document.querySelectorAll(".form");
   console.log(form);
-  form.addEventListener("click", function (event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log(event);
+    console.log(event.target);
   });
 }
+console.log("connected");
 formAnswer();
+
+function createCard(card, cardTitle) {}
