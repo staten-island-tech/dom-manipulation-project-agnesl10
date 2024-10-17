@@ -5,8 +5,8 @@ const DOMSelectors = {
   cardHeader: document.querySelectorAll(".card-header"),
   form: document.querySelector(".form"),
   button: document.querySelectorAll(".btn"),
-  name: document.querySelector("#input1"),
-  color: document.querySelector("#input2"),
+  name: document.querySelector("#inputn"),
+  color: document.querySelector("#inputc"),
 };
 
 // DOMSelectors.container.insertAdjacentHTML("beforebegin", 'ur html'); //takes two arguments: where and what we are putting it
@@ -16,13 +16,35 @@ function createObject() {
     e.preventDefault();
     const input1 = DOMSelectors.input1.value;
     const input2 = DOMSelectors.input2.value;
+
+    insertObject(input1, input2);
+    clearText();
+    removebtn();
   });
 }
 
-function insertOBject(name, color) {
+function insertObject(name, color) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class=card><h2>${input1}</h2></div>`
+    `<div class=card>
+    <h2>${name}</h2>
+    <p>${color}</p>
+    <button class="delete-btn"">remove</button>
+    </div>`
   );
 }
+
+function clearText() {
+  document.querySelector("#inputn").value = "";
+  document.querySelector("#inputc").value = "";
+}
+
+function removebtn() {
+  const deletebtn = document.querySelector(".delete-btn");
+  deletebtn.addEventListener("click", function () {
+    const card = document.querySelector(".card");
+    card.remove();
+  });
+}
+
 createObject();
