@@ -85,7 +85,7 @@ function formAnswer() {
   let form = document.querySelector(".submit");
   console.log(form);
   form.preventDefault();
-  form.addEventListener("Beep", function (event) {});
+  form.addEventListener("click", function (event) {});
   console.log(form);
 }
 formAnswer();
@@ -137,8 +137,9 @@ buttons.forEach((btn) =>
 
 DOMSelectors.container.insertAdjacentHTML(
   "beforeend",
-  '<div class = "card"><h2 class="card-header">${album.name}</h2></div>'
+  `<div class = "card"><h2 class="card-header">${album.name}</h2></div>`
 );
+// im assuming that adds card
 
 // we need to do: //
 //  event listener for form

@@ -3,26 +3,26 @@ const DOMSelectors = {
   header: document.querySelector("h1"),
   card: document.querySelectorAll(".card"),
   cardHeader: document.querySelectorAll(".card-header"),
-  form: document.querySelectorAll(".form"),
+  form: document.querySelector(".form"),
   button: document.querySelectorAll(".btn"),
-  input: document.querySelector("#input"),
+  name: document.querySelector("#input1"),
+  color: document.querySelector("#input2"),
 };
 
-function formAnswer() {
-  let button = document.querySelectorAll(".btn");
-  console.log(button);
-  button.addEventListener("click", function (event) {
-    event.preventDefault();
-    console.log(event.target);
+// DOMSelectors.container.insertAdjacentHTML("beforebegin", 'ur html'); //takes two arguments: where and what we are putting it
+
+function createObject() {
+  DOMSelectors.form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const input1 = DOMSelectors.input1.value;
+    const input2 = DOMSelectors.input2.value;
   });
 }
-console.log("connected");
-formAnswer();
 
-// DOMSelectors.container.insertAdjacentHTML("beforebegin", 'ur html'); //takes two arguments: where and what we are putting it
-DOMSelectors.form.addEventListener("click", function () {
-  let input = DOMSelectors.input.value;
-  DOMSelectors.box.insertAdjacentHTML("beforeend", `<p> ${input}</p>`);
-  DOMSelectors.input.value = ""; //resets button
-});
-function createCard(card, cardTitle) {}
+function insertOBject(name, color) {
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `<div class=card><h2>${input1}</h2></div>`
+  );
+}
+createObject();

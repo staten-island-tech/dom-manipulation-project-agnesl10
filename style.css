@@ -60,12 +60,17 @@ h1 {
     background-color: rgb(204, 190, 172);
     border: 3px solid rgb(114, 90, 58);
     border-radius: 3px;
-    height: 400px;
-    width: 350px;
+    height: 200px;
+    width: 150px;
     margin: 0 auto;
     padding: 2;
 }
-    
+.fav-color {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0 auto;
+    padding: 2;
+}
 .card-header {
     font-size: 1rem;
     text-align: center;
