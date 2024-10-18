@@ -1,10 +1,8 @@
 const DOMSelectors = {
   container: document.querySelector(".container"),
-  header: document.querySelector("h1"),
   card: document.querySelectorAll(".card"),
-  cardHeader: document.querySelectorAll(".card-header"),
   form: document.querySelector(".form"),
-  button: document.querySelectorAll(".btn"),
+  button: document.querySelector(".btn"),
   name: document.querySelector("#input1"),
   color: document.querySelector("#input2"),
 };
@@ -14,15 +12,35 @@ const DOMSelectors = {
 function createObject() {
   DOMSelectors.form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const input1 = DOMSelectors.input1.value;
-    const input2 = DOMSelectors.input2.value;
+    const input1 = DOMSelectors.name.value;
+    const input2 = DOMSelectors.color.value;
+
+    insertOBject(input1, input2);
+    clearText();
+    removeObject();
   });
 }
 
 function insertOBject(name, color) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class=card><h2>${input1}</h2></div>`
+    `<div class="card">
+      <h2 class="card-header">${name}</h2>
+      <p class="fav-color">${color}</p></p>
+      <button class="removebtn" type="button">remove</button>
+    </div>`
   );
+}
+
+function clearText(){
+  document.querySelector(".form").reset(); //clears form 
+}
+
+function removeObject(){
+  DOMSelectors.container.addEventListener("click", function (event){
+    if (event.target.classList.contains("removebtn")) { //checks to see if elements in your HTMl have the class removebtn and if it does it follows thru with the if statement.
+      event.target.closest(".card").remove(); //finds the closest parent card of the delete button that you clicked and deletes that div.
+    }
+  });
 }
 createObject();
