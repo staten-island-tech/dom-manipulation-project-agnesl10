@@ -27,7 +27,9 @@ function insertObject(name, color) {
     "beforeend",
     `<div class="card">
       <h2 class="card-header">${name}</h2>
+      <br />
       <p class="fav-color">${color}</p></p>
+      <br />
       <br />
       <button class="removebtn" type="button">remove</button>
     </div>`
