@@ -16,6 +16,13 @@ function createObject() {
     const input1 = DOMSelectors.name.value;
     const input2 = DOMSelectors.color.value;
 
+    if (input1 === "" || input2 === "") {
+      alert("you must put information in to create a card !!") //creates a error message
+      clearText();
+      return; 
+    }
+
+
     insertObject(input1, input2);
     clearText();
     removeObject();
