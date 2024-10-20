@@ -44,15 +44,12 @@ body {
 h1 {
     font-size: 3rem;
     background-color: rgb(116, 155, 212);
-    color: rgb(17, 8, 92);
+    color: rgb(13, 7, 71);
     text-align: center;
-}
-.dm-serif-display-regular {
-    font-family: "DM Serif Display", serif;
+    font-family: "Bagel Fat One", system-ui;
     font-weight: 400;
     font-style: normal;
 }
-
 .container {
     display: flex;
     width: 100vw;
